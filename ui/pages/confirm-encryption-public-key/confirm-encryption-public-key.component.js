@@ -7,7 +7,8 @@ import Identicon from '../../components/ui/identicon';
 import { PageContainerFooter } from '../../components/ui/page-container';
 
 import { MetaMetricsEventCategory } from '../../../shared/constants/metametrics';
-import SiteOrigin from '../../components/ui/site-origin';
+// import SiteOrigin from '../../components/ui/site-origin';
+import { TagUrl } from '../../components/component-library';
 import { Numeric } from '../../../shared/modules/Numeric';
 import { EtherDenomination } from '../../../shared/constants/common';
 import { formatCurrency } from '../../helpers/utils/confirm-tx.util';
@@ -138,7 +139,8 @@ export default class ConfirmEncryptionPublicKey extends Component {
 
     const targetSubjectMetadata = subjectMetadata[txData.origin];
     const notice = t('encryptionPublicKeyNotice', [
-      <SiteOrigin siteOrigin={txData.origin} key={txData.origin} />,
+
+      <TagUrl src={txData.origin} label={txData.origin}/>
     ]);
     const name = targetSubjectMetadata?.hostname || txData.origin;
 

@@ -4,6 +4,7 @@ import Button from '../../ui/button';
 import { AvatarFavicon } from '../../component-library';
 import { stripHttpsSchemeWithoutPort } from '../../../helpers/utils/util';
 import SiteOrigin from '../../ui/site-origin';
+import { TagUrl } from '../../ui/component-library';
 import { BorderColor, Size } from '../../../helpers/constants/design-system';
 
 export default class ConnectedSitesList extends Component {
@@ -41,10 +42,14 @@ export default class ConnectedSitesList extends Component {
                 size={Size.MD}
                 src={subject.iconUrl}
               />
-              <SiteOrigin
+              {/* <SiteOrigin
                 className="connected-sites-list__subject-name"
                 title={subject.extensionId || subject.origin}
                 siteOrigin={this.getSubjectDisplayName(subject)}
+              /> */}
+              <TagUrl
+                src={this.getSubjectDisplayName(subject)}
+                label={subject.extensionId || subject.origin}
               />
             </div>
             <Button

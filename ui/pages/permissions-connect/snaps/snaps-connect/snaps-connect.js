@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useI18nContext } from '../../../../hooks/useI18nContext';
 import Box from '../../../../components/ui/box';
-import SiteOrigin from '../../../../components/ui/site-origin';
+// import SiteOrigin from '../../../../components/ui/site-origin';
+import {TagUrl} from '../../../../components/component-library/tag-url'
 import {
   IconSize,
   ValidTag,
@@ -214,12 +215,16 @@ export default function SnapsConnect({
         paddingLeft={4}
         paddingRight={4}
       >
-        <SiteOrigin
+        {/* <SiteOrigin
           chip
           siteOrigin={origin}
           title={origin}
           iconSrc={iconUrl}
           iconName={name}
+        /> */}
+        <TagUrl
+         src={origin}
+         label={origin}
         />
       </Box>
       <SnapsConnectContent />

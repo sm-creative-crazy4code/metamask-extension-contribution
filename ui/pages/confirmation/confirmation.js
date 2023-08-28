@@ -38,6 +38,7 @@ import {
 import NetworkDisplay from '../../components/app/network-display/network-display';
 import Callout from '../../components/ui/callout';
 import SiteOrigin from '../../components/ui/site-origin';
+import {TagUrl} from'../../components/component-library'
 import { Icon, IconName } from '../../components/component-library';
 import Loading from '../../components/ui/loading-screen';
 ///: BEGIN:ONLY_INCLUDE_IN(snaps)
@@ -381,12 +382,16 @@ export default function ConfirmationPage({
                 paddingBottom={4}
                 flexDirection={FLEX_DIRECTION.COLUMN}
               >
-                <SiteOrigin
+                {/* <SiteOrigin
                   chip
                   siteOrigin={originMetadata.origin}
                   title={originMetadata.origin}
                   iconSrc={originMetadata.iconUrl}
                   iconName={originMetadata.hostname}
+                /> */}
+                <TagUrl
+                  src={originMetadata.origin}
+                  label={originMetadata.origin}
                 />
               </Box>
             )

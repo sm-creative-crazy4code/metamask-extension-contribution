@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { SubjectType } from '@metamask/subject-metadata-controller';
 ///: END:ONLY_INCLUDE_IN
 import SiteOrigin from '../../ui/site-origin';
+import {TagUrl} from '../../component-library'
 import Box from '../../ui/box';
 import {
   FLEX_DIRECTION,
@@ -53,7 +54,7 @@ export default class PermissionsConnectHeader extends Component {
 
     return (
       <div className="permissions-connect-header__icon">
-        <SiteOrigin
+        {/* <SiteOrigin
           chip
           siteOrigin={siteOrigin}
           title={siteOrigin}
@@ -61,7 +62,8 @@ export default class PermissionsConnectHeader extends Component {
           name={iconName}
           leftIcon={leftIcon}
           rightIcon={rightIcon}
-        />
+        />}*/}
+        <TagUrl src={siteOrigin} lable={siteOrigin}/>
       </div>
     );
   }
