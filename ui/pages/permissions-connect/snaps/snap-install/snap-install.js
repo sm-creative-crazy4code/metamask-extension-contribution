@@ -28,7 +28,7 @@ import {
 import { getSnapName } from '../../../../helpers/utils/util';
 import SnapPermissionsList from '../../../../components/app/snaps/snap-permissions-list';
 import { useScrollRequired } from '../../../../hooks/useScrollRequired';
-import SiteOrigin from '../../../../components/ui/site-origin/site-origin';
+// import SiteOrigin from '../../../../components/ui/site-origin/site-origin';
 import{TagUrl} from '../../../../../ui/components/component-library'
 import InstallError from '../../../../components/app/snaps/install-error/install-error';
 import { useOriginMetadata } from '../../../../hooks/useOriginMetadata';
@@ -109,12 +109,16 @@ export default function SnapInstall({
           justifyContent={JustifyContent.center}
           paddingTop={4}
         >
-          <SiteOrigin
+          {/* <SiteOrigin
             chip
             siteOrigin={origin}
             title={origin}
             iconSrc={iconUrl}
             iconName={name}
+          /> */}
+          <TagUrl
+            src={origin}
+            label={origin}
           />
         </Box>
       ) : (
